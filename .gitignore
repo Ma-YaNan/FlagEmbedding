@@ -150,3 +150,5 @@ zh_results
 .idea/
 
 models--*
+
+./self/checkpoint_*
