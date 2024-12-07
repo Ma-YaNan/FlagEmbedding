@@ -151,4 +151,4 @@ zh_results
 
 models--*
 
-./self/checkpoint_*
+self/checkpoint_model_*

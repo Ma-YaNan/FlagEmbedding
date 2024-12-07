@@ -14,8 +14,8 @@ def main():
         EncoderOnlyEmbedderDataArguments,
         EncoderOnlyEmbedderTrainingArguments
     ))
-    model_args, data_args, training_args = parser.parse_json_file(json_file='./self/base_encode_emb/config.json')
-    # model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+    # model_args, data_args, training_args = parser.parse_json_file(json_file='./self/base_encode_emb/config.json')
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
     model_args: EncoderOnlyEmbedderModelArguments
     data_args: EncoderOnlyEmbedderDataArguments
     training_args: EncoderOnlyEmbedderTrainingArguments
