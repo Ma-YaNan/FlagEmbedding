@@ -91,6 +91,7 @@ class M3Embedder(AbsEmbedder):
             trust_remote_code=trust_remote_code,
             cache_dir=cache_dir
         )
+
         self.model = EncoderOnlyEmbedderM3ModelForInference(
             EncoderOnlyEmbedderM3Runner.get_model(
                 model_name_or_path,

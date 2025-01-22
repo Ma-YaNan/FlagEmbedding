@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Normal Launch",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH":"${workspaceFolder}",
+                "HF_ENDPOINT":"https://hf-mirror.com"
+            }
+            
+        },
+        {
             "name": "Python: torchrun",
             "type": "debugpy",
             "request": "launch",
@@ -19,9 +31,9 @@
                 "--model_name_or_path" ,"BAAI/bge-large-en-v1.5",
                 "--train_data", 
                 "./examples/finetune/embedder/example_data/retrieval",
-                "./examples/finetune/embedder/example_data/sts",
-                "./examples/finetune/embedder/example_data/classification-no_in_batch_neg",
-                "./examples/finetune/embedder/example_data/clustering-no_in_batch_neg",
+                // "./examples/finetune/embedder/example_data/sts",
+                // "./examples/finetune/embedder/example_data/classification-no_in_batch_neg",
+                // "./examples/finetune/embedder/example_data/clustering-no_in_batch_neg",
                 "--overwrite_output_dir",
                 "--train_group_size","8",
                 "--query_max_len","512",
@@ -45,6 +57,7 @@
                 "--temperature","0.02",
                 "--sentence_pooling_method", "cls",
                 "--normalize_embeddings","true",
+                "--knowledge_distillation", "true",
                 "--kd_loss_type", "kl_div"
             ],
             "cwd": "${workspaceFolder}",
